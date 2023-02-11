@@ -13,7 +13,7 @@
     "start": "npx jest --watch tests",
     "prepack": "npm run test && rm -rf dist && rm -f $npm_package_name-*.tgz && tsc",
     "patch": "npm --no-git-tag-version version patch",
-    "postversion": "git add package.json && git commit -m \"updated package version to $npm_package_version\" && git push && git tag -a $npm_package_version -m $npm_package_version && git push --tags",
+    "postversion": "npm run update:hash && git add package.json && git commit -m \"updated package version to $npm_package_version\" && git push && git tag -a $npm_package_version -m $npm_package_version && git push --tags",
     "postpublish": "rm -f $npm_package_name-*.tgz && rm -rf dist",
     "docs": "typedoc --excludePrivate",
     "release": "npm run test && npm run patch",
