@@ -16,7 +16,8 @@
     "postversion": "git add package.json && git commit -m \"updated package version to $npm_package_version\" && git push && git tag -a $npm_package_version -m $npm_package_version && git push --tags",
     "postpublish": "rm -f $npm_package_name-*.tgz && rm -rf dist",
     "docs": "typedoc --excludePrivate",
-    "release": "npm run test && npm run patch"
+    "release": "npm run test && npm run patch",
+    "update:hash": "cat package.json | sed 's/\"git_hash\": \"\\(.*\\)\"/\"git_hash\": \"'\"`git rev-parse HEAD`\"'\"/' > package.json"
   },
   "keywords": [],
   "author": "Dana Basken <dbasken@gmail.com>",
@@ -33,6 +34,9 @@
     "ts-jest": "29.0.5",
     "typedoc": "0.23.25",
     "typescript": "4.9.5"
+  },
+  "config": {
+    "git_hash": "dev"
   },
   "jest": {
     "preset": "ts-jest",
