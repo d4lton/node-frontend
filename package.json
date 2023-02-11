@@ -1,6 +1,6 @@
 {
   "name": "@d4lton/node-frontend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Frontend NodeJS Utilities",
   "main": "src/index.ts",
   "scripts": {
@@ -36,7 +36,7 @@
     "typescript": "4.9.5"
   },
   "config": {
-    "git_hash": "dev"
+    "git_hash": "40ed9d99908aea0fe5cf667cc0ce83846d9db919"
   },
   "jest": {
     "preset": "ts-jest",
