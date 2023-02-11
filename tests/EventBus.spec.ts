@@ -2,7 +2,8 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {Event, EventBus} from "../src";
+
+import {EventBus} from "../src";
 
 describe("EventBus", function() {
 

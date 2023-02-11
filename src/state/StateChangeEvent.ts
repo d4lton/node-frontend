@@ -2,7 +2,7 @@
  * Copyright ©2022 Dana Basken
  */
 
-import {Event} from "../";
+import {Event} from "../eventbus/Event";
 
 export class StateChangeEvent extends Event {
 

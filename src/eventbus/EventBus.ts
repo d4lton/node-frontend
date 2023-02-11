@@ -2,7 +2,8 @@
  * Copyright ©2023 Dana Basken
  */
 
-import {Event, Logger} from "../";
+import {Logger} from "../logger/Logger";
+import {Event} from "./Event";
 
 const logger = Logger.logger;
 

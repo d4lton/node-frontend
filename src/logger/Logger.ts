@@ -1,8 +1,7 @@
 /**
  * Copyright ©2023 Dana Basken
  */
-
-import {LoggerLevel, LoggerLevelFromString, LoggerLevels} from "../";
+import {LoggerLevel, LoggerLevelFromString, LoggerLevels} from "./LoggerLevel";
 
 export class Logger {
 
