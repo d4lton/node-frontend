@@ -1,6 +1,6 @@
 {
   "name": "@d4lton/node-frontend",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Frontend NodeJS Utilities",
   "main": "src/index.ts",
   "scripts": {

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1676157020416" clover="3.2.0">
-  <project timestamp="1676157020416" name="All files">
-    <metrics statements="108" coveredstatements="51" conditionals="27" coveredconditionals="9" methods="50" coveredmethods="9" elements="185" coveredelements="69" complexity="0" loc="108" ncloc="108" packages="5" files="8" classes="8"/>
+<coverage generated="1676208765205" clover="3.2.0">
+  <project timestamp="1676208765206" name="All files">
+    <metrics statements="109" coveredstatements="58" conditionals="27" coveredconditionals="9" methods="51" coveredmethods="9" elements="187" coveredelements="76" complexity="0" loc="109" ncloc="109" packages="5" files="8" classes="8"/>
     <package name="src">
-      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="1"/>
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
       <file name="index.ts" path="/Users/dana/d4lton/node/libraries/frontend/src/index.ts">
-        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="1"/>
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="4" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.eventbus">
@@ -62,15 +63,15 @@
       </file>
     </package>
     <package name="src.hooks">
-      <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="useStateChange.ts" path="/Users/dana/d4lton/node/libraries/frontend/src/hooks/useStateChange.ts">
-        <metrics statements="12" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
-        <line num="8" count="0" type="stmt"/>
-        <line num="10" count="0" type="stmt"/>
-        <line num="12" count="0" type="stmt"/>
+        <metrics statements="12" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
@@ -105,7 +106,7 @@
         <line num="56" count="0" type="stmt"/>
         <line num="60" count="0" type="stmt"/>
         <line num="64" count="0" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
       </file>
       <file name="LoggerLevel.ts" path="/Users/dana/d4lton/node/libraries/frontend/src/logger/LoggerLevel.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
