@@ -11,3 +11,4 @@ export {State} from "./state/State";
 export {StateChangeEvent} from "./state/StateChangeEvent";
 export {Config} from "./config/Config";
 export {Firebase} from "./firebase/Firebase";
+export {EventSourceBridge} from "./eventbus/EventSourceBridge";

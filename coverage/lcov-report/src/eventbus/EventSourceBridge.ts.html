@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/hooks/useStateChange.ts</title>
+    <title>Code coverage report for src/eventbus/EventSourceBridge.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/hooks</a> useStateChange.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/eventbus</a> EventSourceBridge.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">46.15% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/13</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/12</span>
+                <span class='fraction'>4/12</span>
             </div>
         
             
@@ -88,19 +88,32 @@
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
-<a name='L26'></a><a href='#L26'>26</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -110,32 +123,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * Copyright ©2023 Dana Basken
  */
 &nbsp;
-import {useEffect, useState} from "react";
-import {EventBus} from "../eventbus/EventBus";
-import {Logger} from "../logger/Logger";
+import {Firebase} from "../firebase/Firebase";
 import {State} from "../state/State";
+import {EventBus} from "./EventBus";
 &nbsp;
-const logger = Logger.logger;
+export class EventSourceBridge {
 &nbsp;
-export function <span class="fstat-no" title="function not covered" >useStateChange&lt;</span>T&gt;(key: string): any {
+  private static _endpoint: string;
+  private static _eventSource: EventSource;
 &nbsp;
-  const [value, setValue] = <span class="cstat-no" title="statement not covered" >useState&lt;T&gt;();</span>
+<span class="fstat-no" title="function not covered" >  static </span>async start(endpoint: string): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    EventSourceBridge._endpoint = endpoint;</span>
+<span class="cstat-no" title="statement not covered" >    State.registerMany("user", "token", EventSourceBridge.onUserChange);</span>
+  }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-    const registration = <span class="cstat-no" title="statement not covered" >State.register(key, <span class="fstat-no" title="function not covered" >(e</span>vent: any) =&gt; <span class="cstat-no" title="statement not covered" >setValue(event.value))</span>;</span>
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >() =</span>&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      EventBus.unregister(registration);</span>
-    };
-  }, [key]);
-&nbsp;
-<span class="cstat-no" title="statement not covered" >  return value;</span>
+<span class="fstat-no" title="function not covered" >  static </span>async onUserChange(): Promise&lt;void&gt; {
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (EventSourceBridge._eventSource) {</span>
+<span class="cstat-no" title="statement not covered" >      EventSourceBridge._eventSource.close();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    <span class="missing-if-branch" title="if path not taken" >I</span>if (State.get("token")) {</span>
+<span class="cstat-no" title="statement not covered" >      EventSourceBridge._eventSource = new EventSource(`${EventSourceBridge._endpoint}?${Firebase.tokenQueryParam}`);</span>
+<span class="cstat-no" title="statement not covered" >      EventSourceBridge._eventSource.addEventListener("message", <span class="fstat-no" title="function not covered" >(e</span>vent: any) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        EventBus.dispatch(JSON.parse(event.data));</span>
+      });
+    }
+  }
 &nbsp;
 }
 &nbsp;</pre></td></tr></table></pre>
