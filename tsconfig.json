@@ -10,7 +10,7 @@
     "strict": true,
     "strictNullChecks": false,
     "esModuleInterop": true,
-    "target": "es6",
+    "target": "esnext",
     "rootDir": "./",
     "outDir": "dist",
     "declaration": true,

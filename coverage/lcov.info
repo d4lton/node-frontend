@@ -118,13 +118,9 @@ BRDA:56,5,0,0
 BRDA:56,5,1,1
 BRDA:74,6,0,1
 BRDA:74,6,1,0
-BRDA:74,7,0,0
-BRDA:74,7,1,1
-BRDA:74,8,0,1
-BRDA:74,8,1,1
-BRDA:75,9,0,1
-BRF:14
-BRH:8
+BRDA:75,7,0,1
+BRF:10
+BRH:5
 end_of_record
 TN:
 SF:src/hooks/useStateChange.ts
