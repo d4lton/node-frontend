@@ -3,6 +3,7 @@
   "version": "1.0.9",
   "description": "Frontend NodeJS Utilities",
   "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "scripts": {
     "test": "jest --rootDir tests",
     "test:integration": "jest --rootDir integrations",
@@ -23,7 +24,6 @@
     "update:hash": "cat package.json | sed 's/\"git_hash\": \"\\(.*\\)\"/\"git_hash\": \"'\"`git rev-parse HEAD`\"'\"/' > package.json"
   },
   "keywords": [],
-  "types": "dist/src/index.d.ts",
   "author": "Dana Basken <dbasken@gmail.com>",
   "repository": "git://github.com/d4lton/node-frontend.git",
   "license": "MIT",
