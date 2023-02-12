@@ -1,8 +1,8 @@
 /**
  * Copyright ©2023 Dana Basken
  */
-import {Logger} from "../logger/Logger";
 import {EventBus, EventBusCallback, EventBusRegistration} from "../eventbus/EventBus";
+import {Logger} from "../logger/Logger";
 import {StateChangeEvent} from "./StateChangeEvent";
 
 const logger = Logger.logger;

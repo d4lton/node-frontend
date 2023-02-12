@@ -2,7 +2,6 @@
  * Copyright ©2022 Dana Basken
  */
 
-
 import {EventBus} from "../src";
 
 describe("EventBus", function() {

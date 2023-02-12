@@ -9,7 +9,7 @@ import {State} from "../state/State";
 
 const logger = Logger.logger;
 
-export default function useStateChange<T>(key: string): any {
+export function useStateChange<T>(key: string): any {
 
   const [value, setValue] = useState<T>();
 

@@ -4,6 +4,7 @@
 
 export {Event} from "./eventbus/Event";
 export {EventBus, EventBusCallback, EventBusRegistration} from "./eventbus/EventBus";
+export {useStateChange} from "./hooks/useStateChange";
 export {Logger} from "./logger/Logger";
 export {LoggerLevel, LoggerLevelFromString, LoggerLevels} from "./logger/LoggerLevel";
 export {State} from "./state/State";
