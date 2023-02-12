@@ -2,7 +2,7 @@
   "name": "@d4lton/node-frontend",
   "version": "1.0.8",
   "description": "Frontend NodeJS Utilities",
-  "main": "dist/src/index.ts",
+  "main": "dist/src/index.js",
   "scripts": {
     "test": "jest --rootDir tests",
     "test:integration": "jest --rootDir integrations",
