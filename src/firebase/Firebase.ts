@@ -57,6 +57,10 @@ export class Firebase {
     State.set("token", Firebase.token);
   }
 
+  static get auth(): Auth {
+    return Firebase._auth;
+  }
+
   static get user(): User | null {
     return Firebase._user;
   }

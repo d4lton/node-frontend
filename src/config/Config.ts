@@ -11,7 +11,7 @@ export class Config {
   }
 
   static get config(): any {
-    return process.env as any || {};
+    return window.process.env as any || {};
   }
 
 }
