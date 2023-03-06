@@ -4,6 +4,7 @@
 
 import {FirebaseApp, initializeApp} from "firebase/app";
 import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User} from "firebase/auth";
+import * as firebaseui from "firebaseui";
 import {English} from "@d4lton/node-common";
 import firebase from "firebase/compat";
 import {Logger} from "../logger/Logger";
@@ -16,6 +17,7 @@ export class Firebase {
 
   private static _app?: FirebaseApp;
   private static _auth?: Auth;
+  private static _ui?: firebaseui.auth.AuthUI;
   private static _auth_unsubscribe: Unsubscribe;
   private static _user: User | null;
   private static _token?: firebase.auth.IdTokenResult;
@@ -63,6 +65,13 @@ export class Firebase {
 
   static get user(): User | null {
     return Firebase._user;
+  }
+
+  static get ui(): any {
+    if (!Firebase._ui) {
+      Firebase._ui = new firebaseui.auth.AuthUI(Firebase.auth);
+    }
+    return Firebase._ui;
   }
 
   static get token(): string | undefined {
