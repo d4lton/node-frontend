@@ -9,7 +9,7 @@ import {Store} from "../store/Store";
 
 const logger = Logger.logger;
 
-export default function useStore<V, T extends Store>(store: typeof Store): [V, T] {
+export function useStore<V, T extends Store>(store: typeof Store): [V, T] {
 
   const instance = store.instance as T;
 
