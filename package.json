@@ -52,7 +52,7 @@
     "react": "^18"
   },
   "config": {
-    "git_hash": "6853b6ae18b1ad548c40bdd34f9be3e2d7f0fe8d"
+    "git_hash": "94184bec3c3582519f4da3d216cf94293b22a5be"
   },
   "jest": {
     "preset": "ts-jest",
