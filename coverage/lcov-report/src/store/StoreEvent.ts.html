@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/state/StateChangeEvent.ts</title>
+    <title>Code coverage report for src/store/StoreEvent.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/state</a> StateChangeEvent.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/store</a> StoreEvent.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">33.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>2/6</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
@@ -80,9 +80,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -90,15 +90,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
- * Copyright ©2022 Dana Basken
+ * Copyright ©2023 Bainbridge Growth LLC
  */
 &nbsp;
-import {Event} from "../eventbus/Event";
+<span class="cstat-no" title="statement not covered" >import {Event} from "../eventbus/Event";</span>
 &nbsp;
-export class StateChangeEvent extends Event {
+<span class="cstat-no" title="statement not covered" >export class S</span>toreEvent extends Event {
 &nbsp;
-<span class="fstat-no" title="function not covered" >  constructor(public <span class="cstat-no" title="statement not covered" >k</span>ey: string,</span> public <span class="cstat-no" title="statement not covered" >value: any,</span> public <span class="cstat-no" title="statement not covered" >previous?: any)</span> {
-<span class="cstat-no" title="statement not covered" >    super(`state:${key}`);</span>
+<span class="fstat-no" title="function not covered" >  constructor(t</span>ype: string, public <span class="cstat-no" title="statement not covered" >value: any,</span> public <span class="cstat-no" title="statement not covered" >previous?: any)</span> {
+<span class="cstat-no" title="statement not covered" >    super(type);</span>
   }
 &nbsp;
 }

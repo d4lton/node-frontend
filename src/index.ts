@@ -9,6 +9,8 @@ export {Logger} from "./logger/Logger";
 export {LoggerLevel, LoggerLevelFromString, LoggerLevels} from "./logger/LoggerLevel";
 export {State} from "./state/State";
 export {StateChangeEvent} from "./state/StateChangeEvent";
+export {Store} from "./store/Store";
+export {StoreEvent} from "./store/StoreEvent";
 export {Config} from "./config/Config";
 export {Firebase} from "./firebase/Firebase";
 export {EventSourceBridge} from "./eventbus/EventSourceBridge";
