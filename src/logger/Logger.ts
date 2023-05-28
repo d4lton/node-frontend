@@ -11,7 +11,7 @@ export class Logger {
   private static _level: LoggerLevel = LoggerLevels.ERROR;
 
   static start(): void {
-    Logger.level = LoggerLevelFromString(Config.get("logger_level", "INFO"));
+    Logger.level = LoggerLevelFromString(Config.get("logger.level", "INFO"));
   }
 
   fatal(...args: any[]): void {

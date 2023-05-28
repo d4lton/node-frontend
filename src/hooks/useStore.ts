@@ -3,11 +3,7 @@
  */
 
 import {useEffect, useState} from "react";
-import {Logger} from "../logger/Logger";
-import {EventBus} from "../eventbus/EventBus";
 import {Store} from "../store/Store";
-
-const logger = Logger.logger;
 
 export function useStore<V, T extends Store>(store: typeof Store): [V, T] {
 
@@ -18,14 +14,13 @@ export function useStore<V, T extends Store>(store: typeof Store): [V, T] {
   const [error, setError] = useState<any>(instance.error);
 
   useEffect(() => {
-    const registrations = EventBus.registerMany(
-      `store:${instance.name}:change`,
-      `store:${instance.name}:loading`,
-      `store:${instance.name}:error`,
-      updateValue
-    );
+    instance.addEventListener("change", updateValue);
+    instance.addEventListener("loading", updateValue);
+    instance.addEventListener("error", updateValue);
     return () => {
-      EventBus.unregister(...registrations);
+      instance.removeEventListener("change", updateValue);
+      instance.removeEventListener("loading", updateValue);
+      instance.removeEventListener("error", updateValue);
     };
   }, []);
 

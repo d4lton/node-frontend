@@ -3,11 +3,7 @@
  */
 
 import {Mutex} from "async-mutex";
-import {EventBus} from "../eventbus/EventBus";
 import {StoreEvent} from "./StoreEvent";
-import {Logger} from "../logger/Logger";
-
-const logger = Logger.logger;
 
 export abstract class Store extends EventTarget {
 
@@ -32,9 +28,9 @@ export abstract class Store extends EventTarget {
   abstract init(): void;
 
   set value(value: any) {
-    const event = new StoreEvent(`store:${this.name}:change`, value, this._value);
+    const event = new StoreEvent("change", value, this._value);
     this._value = value;
-    EventBus.dispatch(event);
+    this.dispatchEvent(event);
   }
 
   get value(): any {
@@ -42,9 +38,9 @@ export abstract class Store extends EventTarget {
   }
 
   set loading(value: boolean) {
-    const event = new StoreEvent(`store:${this.name}:loading`, value, this._loading);
+    const event = new StoreEvent("loading", value, this._loading);
     this._loading = value;
-    EventBus.dispatch(event);
+    this.dispatchEvent(event);
   }
 
   get loading(): boolean {
@@ -52,9 +48,9 @@ export abstract class Store extends EventTarget {
   }
 
   set error(value: any) {
-    const event = new StoreEvent(`store:${this.name}:error`, value, this._error);
+    const event = new StoreEvent("error", value, this._error);
     this._error = value;
-    EventBus.dispatch(event);
+    this.dispatchEvent(event);
   }
 
   get error(): any {
@@ -72,7 +68,6 @@ export abstract class Store extends EventTarget {
       try {
         return await callback(); // await, in case callback throws an exception, so we can catch it here
       } catch (error: any) {
-        logger.error(error.message);
         this.error = error;
       } finally {
         this.loading = false;
