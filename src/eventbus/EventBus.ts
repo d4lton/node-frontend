@@ -75,7 +75,7 @@ export class EventBus {
     if (callbacks) {
       for (const callback of callbacks) {
         try {
-          callback.callback(event);
+          setTimeout(() => callback.callback(event));
         } catch (error: any) {
           logger.error(`error occurred while dispatching "${event.type}" event: ${error.message}`);
         }
