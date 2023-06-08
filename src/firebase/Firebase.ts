@@ -10,6 +10,7 @@ import {Logger} from "../logger/Logger";
 import {State} from "../state/State";
 import {Config} from "../config/Config";
 import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const logger = Logger.logger;
 
