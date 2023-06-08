@@ -54,7 +54,7 @@
     "firebaseui": "^6"
   },
   "config": {
-    "git_hash": "b404504eb3bd1e4d44cda1f809231ee2df85a277"
+    "git_hash": "562c8a06dd5236f37894a41914ac1cc1ebf6f94a"
   },
   "jest": {
     "preset": "ts-jest",
