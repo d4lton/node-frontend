@@ -4,12 +4,12 @@
 
 import {FirebaseApp, initializeApp} from "firebase/app";
 import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User} from "firebase/auth";
-import * as firebaseui from "firebaseui";
+import * as FirebaseUI from "firebaseui";
 import {English} from "@d4lton/node-common";
-import firebase from "firebase/compat";
 import {Logger} from "../logger/Logger";
 import {State} from "../state/State";
 import {Config} from "../config/Config";
+import firebase from "firebase/compat/app";
 
 const logger = Logger.logger;
 
@@ -17,7 +17,7 @@ export class Firebase {
 
   private static _app?: FirebaseApp;
   private static _auth?: Auth;
-  private static _ui?: firebaseui.auth.AuthUI;
+  private static _ui?: FirebaseUI.auth.AuthUI;
   private static _auth_unsubscribe: Unsubscribe;
   private static _user: User | null;
   private static _token?: firebase.auth.IdTokenResult;
@@ -69,7 +69,7 @@ export class Firebase {
 
   static get ui(): any {
     if (!Firebase._ui) {
-      Firebase._ui = new firebaseui.auth.AuthUI(Firebase.auth);
+      Firebase._ui = new FirebaseUI.auth.AuthUI(Firebase.auth);
     }
     return Firebase._ui;
   }
@@ -106,6 +106,20 @@ export class Firebase {
     if (Firebase._auth) {
       return signInWithEmailAndPassword(Firebase._auth, email, password);
     }
+  }
+
+  static signInWithUi(container: string | Element, success?: (authResult: any) => boolean, failure?: (error: FirebaseUI.auth.AuthUIError) => void): void {
+    Firebase.ui.start(container, {
+      signInOptions: [
+        {provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID},
+        {provider: firebase.auth.EmailAuthProvider.PROVIDER_ID, requireDisplayName: false}
+      ],
+      signInFlow: "popup",
+      callbacks: {
+        signInSuccessWithAuthResult: success ? success : () => false,
+        signInFailure: failure
+      }
+    });
   }
 
   static async signOut(): Promise<void> {
