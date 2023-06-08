@@ -3,17 +3,12 @@
  */
 
 import {FirebaseApp, initializeApp} from "firebase/app";
-import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User} from "firebase/auth";
+import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User, GoogleAuthProvider, IdTokenResult, EmailAuthProvider} from "firebase/auth";
 import * as FirebaseUI from "firebaseui";
 import {English} from "@d4lton/node-common";
 import {Logger} from "../logger/Logger";
 import {State} from "../state/State";
 import {Config} from "../config/Config";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import EmailAuthProvider = firebase.auth.EmailAuthProvider;
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import IdTokenResult = firebase.auth.IdTokenResult;
 
 const logger = Logger.logger;
 
