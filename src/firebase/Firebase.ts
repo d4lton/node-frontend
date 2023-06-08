@@ -11,6 +11,9 @@ import {State} from "../state/State";
 import {Config} from "../config/Config";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
+import EmailAuthProvider = firebase.auth.EmailAuthProvider;
+import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
+import IdTokenResult = firebase.auth.IdTokenResult;
 
 const logger = Logger.logger;
 
@@ -21,7 +24,7 @@ export class Firebase {
   private static _ui?: FirebaseUI.auth.AuthUI;
   private static _auth_unsubscribe: Unsubscribe;
   private static _user: User | null;
-  private static _token?: firebase.auth.IdTokenResult;
+  private static _token?: IdTokenResult;
   private static _refreshTokenTimeout?: NodeJS.Timeout;
 
   static async start(): Promise<void> {
@@ -112,8 +115,8 @@ export class Firebase {
   static signInWithUi(container: string | Element, success?: (authResult: any) => boolean, failure?: (error: FirebaseUI.auth.AuthUIError) => void): void {
     Firebase.ui.start(container, {
       signInOptions: [
-        {provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID},
-        {provider: firebase.auth.EmailAuthProvider.PROVIDER_ID, requireDisplayName: false}
+        {provider: GoogleAuthProvider.PROVIDER_ID},
+        {provider: EmailAuthProvider.PROVIDER_ID, requireDisplayName: false}
       ],
       signInFlow: "popup",
       callbacks: {
