@@ -3,7 +3,7 @@
  */
 
 import {FirebaseApp, initializeApp} from "firebase/app";
-import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User, GoogleAuthProvider, IdTokenResult, EmailAuthProvider} from "firebase/auth";
+import {Auth, getAuth, signInWithEmailAndPassword, signOut, Unsubscribe, User, IdTokenResult, GoogleAuthProvider, EmailAuthProvider} from "firebase/auth";
 import * as FirebaseUI from "firebaseui";
 import {English} from "@d4lton/node-common";
 import {Logger} from "../logger/Logger";

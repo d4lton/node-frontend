@@ -9,9 +9,9 @@ export abstract class Store extends EventTarget {
 
   private static _instance: Store;
   private static _mutex: any = new Mutex();
-  private _value: any;
-  private _loading: boolean = false;
-  private _error: any;
+  protected _value: any;
+  protected _loading: boolean = false;
+  protected _error: any;
 
   protected constructor() {
     super();
