@@ -8,7 +8,7 @@ import {StoreEvent} from "./StoreEvent";
 export abstract class Store extends EventTarget {
 
   private static _instance: Store;
-  private static _mutex: any = new Mutex();
+  protected _mutex: any = new Mutex();
   protected _value: any;
   protected _loading: boolean = false;
   protected _error: any;
@@ -62,7 +62,7 @@ export abstract class Store extends EventTarget {
   }
 
   async action(callback: () => any): Promise<any> {
-    return Store._mutex.runExclusive(async () => {
+    return this._mutex.runExclusive(async () => {
       this.loading = true;
       this.error = undefined;
       try {
