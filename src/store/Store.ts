@@ -26,6 +26,7 @@ export abstract class Store extends EventTarget {
   }
 
   abstract init(): void;
+  shutdown(): void {}
 
   set value(value: any) {
     const event = new StoreEvent("change", value, this._value);

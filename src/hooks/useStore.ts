@@ -21,6 +21,7 @@ export function useStore<V, T extends Store>(store: typeof Store): [V, T] {
       instance.removeEventListener("change", updateValue);
       instance.removeEventListener("loading", updateValue);
       instance.removeEventListener("error", updateValue);
+      instance.shutdown();
     };
   }, []);
 
