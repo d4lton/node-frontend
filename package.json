@@ -1,6 +1,6 @@
 {
   "name": "@d4lton/node-frontend",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "Frontend NodeJS Utilities",
   "license": "UNLICENSED",
   "private": true,
